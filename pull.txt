@@ -1,1 +1,5 @@
-this is a pull request
+<<<<<<< HEAD
+this is a pull request,pavithra
+=======
+ this is pull request
+>>>>>>> 91c6626 (pull committed)
