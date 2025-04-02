@@ -1,23 +1,28 @@
-def assign_items_to_users(users, locations):
-    assignments = {}
+def allocate_locations(people_preferences, vacancies): allocations = {}
 
-    for user, preferences in users.items():
-        for item in preferences:
-            # Simply assign the first preference without checking other users
-            assignments[user] = item
-            break  # Once the first preference is assigned, stop
+for person, preferences in people_preferences.items():
+    for choice in preferences:
+        if vacancies[choice] > 0:
+            allocations[person] = choice
+            vacancies[choice] -= 1
+            break
+    else:
+        allocations[person] = "Not Allocated"  # If no preference is available
 
-    return assignments
+return allocations
 
-users = {
-    "Ram": ["Chennai", "Banglore"],
-    "Ravi": ["Chennai", "Hyderabad"],
-    "Sanjay": ["Hyderabad", "Banglore"],
-    "Anil": ["Banglore", "Chennai"],
-    "Veda": ["Chennai", "Banglore"],
-    "pavithra": ["hyderabad", "Banglore"]  # New user
-}
-locations = ["Chennai", "Banglore", "Hyderabad"]
+people_preferences = { "Person1": ["Chennai", "Mumbai", "Bangalore"], 
+                      "Person2": ["Mumbai", "Chennai", "Bangalore"], 
+                      "Person3": ["Bangalore", "Mumbai", "Chennai"],
+                      "Person4": ["Chennai", "Bangalore", "Mumbai"], 
+                      "Person5": ["Mumbai", "Chennai", "Bangalore"], 
+                      "Person6": ["Chennai", "Mumbai", "Bangalore"], 
+                      "Person7": ["Bangalore", "Mumbai", "Chennai"], 
+                      "Person8": ["Mumbai", "Chennai", "Bangalore"], 
+                      "Person9": ["Chennai", "Mumbai", "Bangalore"],
+                      "Person10": ["Mumbai", "Chennai", "Bangalore"] 
+                     }
 
-result = assign_items_to_users(users, locations)
-print(result)
+vacancies = {"Chennai": 5, "Mumbai": 4, "Bangalore": 1}
+
+allocations = allocate_locations(people_preferences, vacancies) print(allocations)
