@@ -1,0 +1,67 @@
+<!--Assignment: Create a search bar that performs search requests with debouncing and throttling to improve user experience.-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Debounce & Throttle Search</title>
+</head>
+<body>
+  <h3>Debounced Search</h3>
+  <input type="text" id="debounceInput" placeholder="Type to search..." />
+
+  <h3>Throttled Search</h3>
+  <input type="text" id="throttleInput" placeholder="Enter query..." />
+  <button id="searchButton">Search</button>
+
+ </body>
+  <script>
+    function performSearch(query, method) {
+        // console.log([${method}] Searching for:,query);
+        console.log(`[${method}] Searching for:`, query);
+
+    }
+
+    // Debounce: delays until typing stops
+    function debounce(fn, delay) {
+      let timeout;
+      return function (...args) {
+        clearTimeout(timeout);
+        timeout = setTimeout(() => fn.apply(this, args), delay);
+      };
+    }
+
+    // Throttle: limits frequency of calls
+    function throttle(fn, limit) {
+      let lastCall = 0;
+      return function (...args) {
+        const now = Date.now();
+        if (now - lastCall >= limit) {
+          lastCall = now;
+          fn.apply(this, args);
+        }
+      };
+    }
+
+    // Debounced input search
+    const debounceInput = document.getElementById("debounceInput");
+    const debouncedSearch = debounce((value) => {
+      performSearch(value, "Debounce");
+    }, 1000);
+
+    debounceInput.addEventListener("input", (e) => {
+      debouncedSearch(e.target.value);
+    });
+
+    // Throttled button search
+    const throttleInput = document.getElementById("throttleInput");
+    const searchButton = document.getElementById("searchButton");
+    const throttledButtonSearch = throttle(() => {
+      const value = throttleInput.value;
+      performSearch(value, "Throttle");
+    }, 3000);
+
+    searchButton.addEventListener("click", throttledButtonSearch);
+  </script>
+</body>
+</html>
