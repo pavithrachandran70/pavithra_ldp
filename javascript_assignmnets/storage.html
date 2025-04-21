@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Score Tracker</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 2rem;
+      text-align: center;
+    }
+    .score {
+      font-size: 30px;
+      margin: 10px;
+    }
+    button {
+      padding: 10px;
+      font-size: 30px;
+     
+    }
+  </style>
+</head>
+<body>
+
+  <h1>STORAGE</h1>
+  <div class="score">Local Score: <span id="localScore">0</span></div>
+  <div class="score">Session Score: <span id="sessionScore">0</span></div>
+  <button id="incrementBtn">Increment Scores</button>
+
+  <script>
+ 
+    let localScore = parseInt(localStorage.getItem('localScore')) || 0;   
+    let sessionScore = parseInt(sessionStorage.getItem('sessionScore')) || 0;
+
+   
+    const localScoreEl = document.getElementById('localScore');
+    const sessionScoreEl = document.getElementById('sessionScore');
+
+    function updateDisplay() {
+      localScoreEl.textContent = localScore;   //inital score=0
+      sessionScoreEl.textContent = sessionScore;
+    }
+
+    updateDisplay();
+
+   
+    document.getElementById('incrementBtn').addEventListener('click', () => {   // Increment button click handler
+      localScore++;
+      sessionScore++;
+
+      // Storing updated scores
+      localStorage.setItem('localScore', localScore);
+      sessionStorage.setItem('sessionScore', sessionScore);
+
+      updateDisplay();
+    });
+  </script>
+
+</body>
+</html>
