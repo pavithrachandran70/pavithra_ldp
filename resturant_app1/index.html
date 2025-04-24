@@ -185,13 +185,6 @@ function dropItem(event, tableId) {
   } else {
     orders[tableId].push({ name: itemName, price: price, qty: 1 });
   }
-
-  // const dropZone = document.getElementById(tableId).querySelector('.drop-zone');
-  // const entry = document.createElement('div');
-  // entry.textContent = `${itemName} - ₹${price}`;
-  // dropZone.appendChild(entry);
-
-
   updateTableDisplay(tableId);
 
 }
@@ -292,12 +285,6 @@ function updateTableDisplay(tableId) {
         totalCost += item.price * item.qty;
       });
   
-      // const dropZone = document.getElementById(tableId).querySelector('.drop-zone');
-      // if (orders[tableId].length === 0) {
-      //   dropZone.textContent = '';
-      // } else {
-      //   dropZone.textContent = `Rs. ${totalCost} | ${totalItems} items`;
-      // }
       info.textContent = `Items: ${totalItems} | Rs. ${totalCost}`;
       const dropZone = table.querySelector('.drop-zone');
       dropZone.textContent = '';
