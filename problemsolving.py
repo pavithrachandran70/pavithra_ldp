@@ -1,28 +1,32 @@
-def allocate_locations(people_preferences, vacancies): allocations = {}
+def allocate_locations(preferences, location_vacancies):
+    allocations = {}
 
-for person, preferences in people_preferences.items():
-    for choice in preferences:
-        if vacancies[choice] > 0:
-            allocations[person] = choice
-            vacancies[choice] -= 1
-            break
-    else:
-        allocations[person] = "Not Allocated"  # If no preference is available
+    for person, person_preferences in preferences.items():
+        for choice in person_preferences:
+            if location_vacancies.get(choice, 0) > 0:
+                allocations[person] = choice
+                location_vacancies[choice] -= 1
+                break
+        else:
+            allocations[person] = "Not Allocated"   
 
-return allocations
+    return allocations
 
-people_preferences = { "Person1": ["Chennai", "Mumbai", "Bangalore"], 
-                      "Person2": ["Mumbai", "Chennai", "Bangalore"], 
-                      "Person3": ["Bangalore", "Mumbai", "Chennai"],
-                      "Person4": ["Chennai", "Bangalore", "Mumbai"], 
-                      "Person5": ["Mumbai", "Chennai", "Bangalore"], 
-                      "Person6": ["Chennai", "Mumbai", "Bangalore"], 
-                      "Person7": ["Bangalore", "Mumbai", "Chennai"], 
-                      "Person8": ["Mumbai", "Chennai", "Bangalore"], 
-                      "Person9": ["Chennai", "Mumbai", "Bangalore"],
-                      "Person10": ["Mumbai", "Chennai", "Bangalore"] 
-                     }
 
-vacancies = {"Chennai": 5, "Mumbai": 4, "Bangalore": 1}
+preferences = {
+    "Person1": ["Chennai", "Mumbai", "Bangalore"],
+    "Person2": ["Mumbai", "Chennai", "Bangalore"],
+    "Person3": ["Bangalore", "Mumbai", "Chennai"],
+    "Person4": ["Chennai", "Bangalore", "Mumbai"],
+    "Person5": ["Mumbai", "Chennai", "Bangalore"],
+    "Person6": ["Chennai", "Mumbai", "Bangalore"],
+    "Person7": ["Bangalore", "Mumbai", "Chennai"],
+    "Person8": ["Mumbai", "Chennai", "Bangalore"],
+    "Person9": ["Chennai", "Mumbai", "Bangalore"],
+    "Person10": ["Mumbai", "Chennai", "Bangalore"]
+}
 
-allocations = allocate_locations(people_preferences, vacancies) print(allocations)
+location_vacancies = {"Chennai": 5, "Mumbai": 4, "Bangalore": 1}
+
+allocations = allocate_locations(preferences, location_vacancies)
+print(allocations)
