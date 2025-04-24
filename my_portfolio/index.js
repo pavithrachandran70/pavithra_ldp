@@ -1,3 +1,3 @@
-// function toggleMenu() {
-//     document.getElementsById('navbar').classList.toggle('active');
-// }
+ function toggleMenu() {
+        document.querySelector('.menu').classList.toggle('active');
+    }
