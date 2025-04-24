@@ -196,28 +196,6 @@ body {
     }
   }
   
-  /* For very small mobile devices */
-  /* @media (max-width: 480px) {
-    .popup {
-      width: 75%; */
-      /* left: 2.5%; */
-      
-    /* }
-  
-    .generate-btn, .close-btn {
-      font-size: 14px;
-    }
-  
-    #orderTable {
-      font-size: 12px;
-    }
-  
-    .item, .tables {
-      font-size: 13px;
-    }
-  } */
-  
-  
   @media (max-width: 480px) {
     .popup {
       width: 75%;
