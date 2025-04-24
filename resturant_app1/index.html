@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Resturant Billing System</title>
+  <link href="index.css" rel="stylesheet">
+  <link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+</head>
+<body>
+
+
+  <h1>RESTURANT BILLING SYSTEM </h1>
+  <div class="container">
+   
+  <!-- Table Column -->
+  <div class="table">
+    <h2>Tables</h2>
+    <div class="search-box">
+      <input type="text" id="tableSearch" oninput="filterTable()" placeholder="Search Tables">
+      <button class="clear-btn" id="clearBtn">x</button>
+    </div>
+    <div id="tableList">
+      <div class="tables" id="table1" ondrop="dropItem(event, 'table1')" ondragover="allowDrop(event)"   onclick="popup('table1')"  >
+        <strong>Table 1</strong>
+        <div class="drop-zone"></div>
+        <p class="table-info">Items: 0 | Rs. 0</p>
+
+      </div>
+
+      <div class="tables" id="table2" ondrop="dropItem(event, 'table2')" ondragover="allowDrop(event)"  onclick="popup('table2')" >
+        <strong>Table 2</strong>
+        <div class="drop-zone"></div>
+        <p class="table-info">Items: 0 | Rs. 0</p>
+
+      </div>
+      <div class="tables" id="table3" ondrop="dropItem(event, 'table3')" ondragover="allowDrop(event)"  onclick="popup('table3')" >
+        <strong>Table 3</strong>
+        <div class="drop-zone"></div>
+        <p class="table-info">Items: 0 | Rs. 0</p>
+      </div>
+    </div>
+  </div>
+
+
+
+  <!-- Menu Column -->
+  <div class="menu">
+    <h2>Menu</h2>
+    <div class="search-box">
+      <input type="text" id="menuSearch" oninput="filterMenu(event)" placeholder="Search Menu">
+      <button class="clear-btn" id="clearButton">x</button>
+    </div>
+    <div id="menuList">
+      <div class="item" draggable="true" ondragstart="startDrag(event)" data-price="80">
+        <span class="item-name">Burger</span>
+        <span class="item-price">₹80</span>
+      </div>
+      <div class="item" draggable="true" ondragstart="startDrag(event)" data-price="200"> 
+        <span class="item-name">Pizza</span>
+        <span class="item-price">₹150</span></div>
+      <div class="item" draggable="true" ondragstart="startDrag(event)" data-price="100">
+        <span class="item-name">Pasta</span>
+        <span class="item-price">₹120</span>
+      </div>
+      <div class="item" draggable="true" ondragstart="startDrag(event)" data-price="120">
+        <span class="item-name">French Fries</span>
+        <span class="item-price">₹80</span>
+      </div>
+      <div class="item" draggable="true" ondragstart="startDrag(event)" data-price="180">
+        <span class="item-name">Paneer Tikka</span>
+        <span class="item-price">₹200</span>
+      </div>
+      <div class="item" draggable="true" ondragstart="startDrag(event)" data-price="180">
+        <span class="item-name">Chicken Briyani</span>
+        <span class="item-price">₹280</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+ <!-- Popup Box -->
+ <div id="popupBox" class="popup">
+  <button class="close-btn" onclick="closePopup()">X</button>
+  <h3 id="popupTitle"></h3>
+  <table id="orderTable">
+    <thead>
+      <tr>
+        <th>S.No</th>
+        <th>Item</th>
+        <th>Rate</th>
+        <th>Qty</th>
+        <th><i class="fas fa-trash delete-icon" style="cursor: pointer; color: red;"></i></th>
+      </tr>
+    </thead>
+    <tbody></tbody>
+  </table>
+  <h4 id="totalCost">Total: Rs.0</h4>
+  <button class="generate-btn" onclick="generateBill()">Generate Bill</button>
+</div>
+
+<script src="index.js">    
+</script>
+</body>
+</html>
+
+
