@@ -4,8 +4,6 @@
     box-sizing: border-box;
     font-family: 'poppins', serif;
 }
-
-
 body{
     background-color:#1f242d;
 }
@@ -203,26 +201,6 @@ a{
     margin-top: 20px;
 }
 
-/* 
-@media (max-width: 768px) {
-    .paragraph {
-        flex-direction: column;
-        text-align: center;
-        width: 100%;
-       
-    }
-    .para {
-        text-align: center;
-        padding: 10px;
-        width: 100%;
-        overflow: scroll;
-    }
-   
-} */
-
-
-
-
 
 /* GALLERY */
 
@@ -296,8 +274,6 @@ a{
     
     
 }
-
-
 .contact {
   
    color:white;
@@ -367,20 +343,11 @@ label {
 }
 
 
-
-
-
-
-
 @media (max-width: 768px) {
     .home {
         margin-top: 30px;
     }
-    /* .photo-1 {
-        width: 100px;
-        height: 100px;
-    } */
-
+   
      .grid {
        grid-template-columns: repeat(2, 1fr);
        margin:auto;
