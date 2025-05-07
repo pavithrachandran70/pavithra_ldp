@@ -1,0 +1,67 @@
+
+import React, { useState } from 'react';
+import {
+  DialogTitle,
+  DialogContent,
+  DialogActions,
+  Button,
+  Typography
+} from '@mui/material';
+import { ThemeProvider } from '@mui/material/styles';
+import { StyledDialog, StyledTextField, customTheme } from './index.styles';
+import TypographyAtom from "../../atoms/Typography/index"
+
+interface NameModalProps {
+  isOpen: boolean;
+  onClose: () => void;
+  onSubmitName: (name: string) => void;
+}
+
+const NameModal: React.FC<NameModalProps> = ({ isOpen, onClose, onSubmitName }) => {
+  const [inputValue, setInputValue] = useState('');
+  const [error, setError] = useState(false);
+
+  const handleCreate = () => {
+    if (inputValue.trim() === '') {
+      setError(true);
+      return;
+    }
+
+    onSubmitName(inputValue);
+    setInputValue('');
+    setError(false);
+  };
+
+  return (
+    <ThemeProvider theme={customTheme}>
+      <StyledDialog open={isOpen} onClose={onClose} fullWidth maxWidth="sm">
+        <DialogTitle>Name your cash kick</DialogTitle>
+        <DialogContent>
+          <Typography variant="body2" gutterBottom mb={2}>
+            Add a name to identify cash kick
+          </Typography>
+          <TypographyAtom variant="body2" gutterBottom>
+            Cash Kick Name
+          </TypographyAtom>
+          <StyledTextField
+            fullWidth
+            placeholder="Enter name"
+            variant="outlined"
+            value={inputValue}
+            onChange={(e) => setInputValue(e.target.value)}
+            margin="dense"
+            error={error}
+            helperText={error ? 'Please Enter a name' : ''}
+          />
+        </DialogContent>
+        <DialogActions>
+          <Button onClick={onClose} color="primary">Cancel</Button>
+          <Button onClick={handleCreate} variant="contained" color="primary">Create</Button>
+        </DialogActions>
+      </StyledDialog>
+    </ThemeProvider>
+  );
+};
+
+export default NameModal;
+
