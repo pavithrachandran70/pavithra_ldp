@@ -1,0 +1,12 @@
+.cashkick-modal {
+    margin-left: 400px;
+    border: 2px solid white; 
+    background-color: #201F24;
+    padding: 16px; 
+    border-radius: 8px; 
+    color: white; 
+  }
+  .but{
+    background-color: #6C5DD3;
+    width:280px;
+  }
