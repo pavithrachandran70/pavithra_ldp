@@ -1,0 +1,68 @@
+.sidebar {
+    width: 200px;
+    background-color: #1a1a1a;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    /* justify-content: space-between; */
+    color: white;
+    position: fixed;
+    left: 0;
+    top: 0;
+  }
+  
+  .logo {
+    font-size: 24px;
+    font-weight: bold;
+    /* margin-bottom: 40px; */
+    display: flex;
+    align-items: center;
+    gap:10px;
+  }
+  .seeder{
+    padding-top: 2px;
+
+  }
+  
+  .menu {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    height:70%;
+    margin-top: 40px;
+  }
+
+  .home{
+    display: flex;
+    align-items: center;
+    gap:10px;
+  }
+  .bottom{
+    margin-top: 60px;
+  }
+  
+  .menu a {
+    color: #aaa;
+    text-decoration: none;
+    font-size: 16px;
+  }
+  
+  .menu a:hover {
+    color: white;
+  }
+  
+  .bottom-link {
+    font-size: 14px;
+    color: #777;
+  }
+  
+  .bottom-link a {
+    color: #777;
+    text-decoration: none;
+  }
+  
+  .bottom-link a:hover {
+    color: white;
+  }
+  

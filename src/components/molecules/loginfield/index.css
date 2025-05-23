@@ -1,0 +1,17 @@
+.login-fields {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+   
+  }
+  .error-text {
+    color: red;
+    font-size: 12px;
+    margin-top: 4px;
+  }
+  
+
+.entire{
+  display:flex;
+}
+  
