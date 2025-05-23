@@ -1,0 +1,29 @@
+{
+  "books": [
+    {
+      "id": "b001",
+      "title": "To Kill a Mockingbird",
+      "author": "Harper Lee"
+    },
+    {
+      "id": "b002",
+      "title": "1984",
+      "author": "George Orwell"
+    },
+    {
+      "id": "b003",
+      "title": "Pride and Prejudice",
+      "author": "Jane Austen"
+    },
+    {
+      "id": "b004",
+      "title": "The Great Gatsby",
+      "author": "F. Scott Fitzgerald"
+    },
+    {
+      "id": "b005",
+      "title": "Harry Potter and the Sorcerer’s Stone",
+      "author": "J.K. Rowling"
+    }
+  ]
+}
