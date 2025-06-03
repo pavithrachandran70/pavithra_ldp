@@ -40,7 +40,7 @@ class orderService{
     public void palce order(string name,amount){
         s.o.p("username"+username);
         paymentMethod.pay(amount);
-        noticationService.send("hi"+username"order is placed")
+        noticationService.send("hi"+username"order")
 
     }
 }
