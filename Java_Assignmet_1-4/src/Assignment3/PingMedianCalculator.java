@@ -77,11 +77,22 @@ public class PingMedianCalculator {
     }
 
     public static void main(String[] args) {
-        String host = "google.com";
-        int count = 5;
-        double median = pingAndCalculateMedian(host, count);
-        if (median >= 0) {
-            System.out.printf("Median ping time to %s is %.2f ms%n", host, median);
-        }
+
+         Scanner sc = new Scanner(System.in);
+
+    System.out.print("Enter hostname (e.g., google.com): ");
+    String host = sc.nextLine();
+
+    System.out.print("Enter number of pings: ");
+    int count = sc.nextInt();
+
+    double median = pingAndCalculateMedian(host, count);
+    if (median >= 0) {
+        System.out.printf("Median ping time to %s is %.2f ms%n", host, median);
+    }
+
+    sc.close();
+        
+
     }
 }
