@@ -1,11 +1,10 @@
-
-package Assignment5.singleton;
+package Pavithra.Assignment.singleton;
 
 public class SingletonExample {
     // Non-static member variable
     private String value;
 
-   //Static method to create instance
+    //Static method to create instance
     public static SingletonExample initialize(String val) {
         SingletonExample instance = new SingletonExample();
         instance.value = val;
@@ -16,4 +15,3 @@ public class SingletonExample {
         System.out.println("String value: " + value);
     }
 }
-
