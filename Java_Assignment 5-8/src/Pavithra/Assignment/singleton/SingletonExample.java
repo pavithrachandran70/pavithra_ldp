@@ -11,7 +11,7 @@ public class SingletonExample {
         return instance;
     }
 
-    public void print() {
+    public void printMessage() {
         System.out.println("String value: " + value);
     }
 }

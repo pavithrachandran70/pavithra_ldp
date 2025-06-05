@@ -14,6 +14,6 @@ public class MainClass {
 
         // Second class: SingletonExample
         SingletonExample singleton = SingletonExample.initialize("Hello from Singleton!");
-        singleton.print();
+        singleton.printMessage();
     }
 }
