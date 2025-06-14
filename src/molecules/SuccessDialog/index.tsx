@@ -15,7 +15,8 @@ import {
 import { StyledDialog,  CenteredImageBox,
   CenteredText,
   CustomDialogActions, } from './index.styles';
-  import TypographyAtom from "../../atoms/Typography/index"
+  import TYpography from "../../atoms/Typography/index"
+ import CustomButton from "../../atoms/Button/index"
 
 interface SuccessModalProps {
   isOpen: boolean;
@@ -28,9 +29,9 @@ const SuccessModal: React.FC<SuccessModalProps> = ({ isOpen, onClose, onViewCash
      <StyledDialog open={isOpen} onClose={onClose} fullWidth maxWidth="sm">
       <DialogTitle>{SUCCESS_MODAL_TEXTS.dialogTitle}</DialogTitle>
       <DialogContent>
-        <TypographyAtom variant="subtitle1" gutterBottom>
+        <TYpography variant="subtitle1" gutterBottom>
           {SUCCESS_MODAL_TEXTS.subtitle}
-        </TypographyAtom>
+        </TYpography>
 
         <CenteredImageBox>
           <img src={sucess} alt="Success" width="100" />
@@ -45,12 +46,12 @@ const SuccessModal: React.FC<SuccessModalProps> = ({ isOpen, onClose, onViewCash
       </DialogContent>
 
       <CustomDialogActions>
-        <Button variant="outlined" onClick={onClose}>
+        <CustomButton variant="outlined" onClick={onClose}>
           {SUCCESS_MODAL_TEXTS.closeButton}
-        </Button>
-        <Button variant="contained" onClick={onViewCashKicks}>
+        </CustomButton>
+        <CustomButton variant="contained" onClick={onViewCashKicks}>
           {SUCCESS_MODAL_TEXTS.viewCashKicksButton}
-        </Button>
+        </CustomButton>
       </CustomDialogActions>
     </StyledDialog>
    
