@@ -10,6 +10,7 @@ import {
 import { ThemeProvider } from '@mui/material/styles';
 import { StyledDialog, StyledTextField, customTheme } from './index.styles';
 import TypographyAtom from "../../atoms/Typography/index"
+import CustomButton from "../../atoms/Button/index"
 
 interface NameModalProps {
   isOpen: boolean;
@@ -55,8 +56,8 @@ const NameModal: React.FC<NameModalProps> = ({ isOpen, onClose, onSubmitName }) 
           />
         </DialogContent>
         <DialogActions>
-          <Button onClick={onClose} color="primary">Cancel</Button>
-          <Button onClick={handleCreate} variant="contained" color="primary">Create</Button>
+          <CustomButton onClick={onClose} color="primary">Cancel</CustomButton>
+          <CustomButton onClick={handleCreate} variant="contained" color="primary">Create</CustomButton>
         </DialogActions>
       </StyledDialog>
     </ThemeProvider>
