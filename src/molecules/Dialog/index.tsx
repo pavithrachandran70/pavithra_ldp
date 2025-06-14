@@ -4,12 +4,11 @@ import {
   DialogTitle,
   DialogContent,
   DialogActions,
-  Button,
-  Typography
+  Button
 } from '@mui/material';
 import { ThemeProvider } from '@mui/material/styles';
 import { StyledDialog, StyledTextField, customTheme } from './index.styles';
-import TypographyAtom from "../../atoms/Typography/index"
+import Typography from "../../atoms/Typography/index"
 import CustomButton from "../../atoms/Button/index"
 
 interface NameModalProps {
@@ -41,9 +40,9 @@ const NameModal: React.FC<NameModalProps> = ({ isOpen, onClose, onSubmitName }) 
           <Typography variant="body2" gutterBottom mb={2}>
             Add a name to identify cash kick
           </Typography>
-          <TypographyAtom variant="body2" gutterBottom>
+          <Typography variant="body2" gutterBottom>
             Cash Kick Name
-          </TypographyAtom>
+          </Typography>
           <StyledTextField
             fullWidth
             placeholder="Enter name"
