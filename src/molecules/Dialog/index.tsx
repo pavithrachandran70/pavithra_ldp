@@ -8,7 +8,7 @@ import {
 } from '@mui/material';
 import { ThemeProvider } from '@mui/material/styles';
 import { StyledDialog, StyledTextField, customTheme } from './index.styles';
-import Typography from "../../atoms/Typography/index"
+import TYpography from "../../atoms/Typography/index"
 import CustomButton from "../../atoms/Button/index"
 
 interface NameModalProps {
@@ -37,12 +37,12 @@ const NameModal: React.FC<NameModalProps> = ({ isOpen, onClose, onSubmitName }) 
       <StyledDialog open={isOpen} onClose={onClose} fullWidth maxWidth="sm">
         <DialogTitle>Name your cash kick</DialogTitle>
         <DialogContent>
-          <Typography variant="body2" gutterBottom mb={2}>
+          <TYpography variant="body2" gutterBottom mb={2}>
             Add a name to identify cash kick
-          </Typography>
-          <Typography variant="body2" gutterBottom>
+          </TYpography>
+          <TYpography variant="body2" gutterBottom>
             Cash Kick Name
-          </Typography>
+          </TYpography>
           <StyledTextField
             fullWidth
             placeholder="Enter name"
