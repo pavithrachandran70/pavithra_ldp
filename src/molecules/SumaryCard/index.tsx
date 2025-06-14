@@ -3,7 +3,7 @@ import React from 'react';
 import { CardContent, Typography, Box } from '@mui/material';
 import * as Styled from '../SumaryCard/index.styles'
 import ifoicon from '../../assets/icon.svg';
-import TypographyAtom from '../../atoms/Typography';
+import TYpography from '../../atoms/Typography';
 
 interface SummaryCardProps {
   term: string;
@@ -32,33 +32,33 @@ const SummaryCard: React.FC<SummaryCardProps> = ({
 
         <Styled.InfoContainer>
           <Styled.Row>
-            <TypographyAtom variant="body1">Term:</TypographyAtom>
-            <TypographyAtom variant="body1" align="right">{term}</TypographyAtom>
+            <TYpography variant="body1">Term:</TYpography>
+            <TYpography variant="body1" align="right">{term}</TYpography>
           </Styled.Row>
 
           <Styled.Row>
-            <TypographyAtom variant="body1">Selected Contracts:</TypographyAtom>
-            <TypographyAtom variant="body1" align="right">{selectedContracts}</TypographyAtom>
+            <TYpography variant="body1">Selected Contracts:</TYpography>
+            <TYpography variant="body1" align="right">{selectedContracts}</TYpography>
           </Styled.Row>
 
           <Styled.Row>
-            <TypographyAtom variant="body1">Pay Back Amount:</TypographyAtom>
-            <TypographyAtom variant="body1" align="right">{payBackAmount}</TypographyAtom>
+            <TYpography variant="body1">Pay Back Amount:</TYpography>
+            <TYpography variant="body1" align="right">{payBackAmount}</TYpography>
           </Styled.Row>
 
           <Styled.Row>
-            <TypographyAtom variant="body1">Rate:</TypographyAtom>
-            <TypographyAtom variant="body1" align="right">{rate}</TypographyAtom>
+            <TYpography variant="body1">Rate:</TYpography>
+            <TYpography variant="body1" align="right">{rate}</TYpography>
           </Styled.Row>
         </Styled.InfoContainer>
 
         <Styled.StyledDivider />
 
         <Box mt={2}>
-          <TypographyAtom variant="h6" fontWeight="bold">
+          <TYpography variant="h6" fontWeight="bold">
             Total Payout:{' '}
             <Styled.TotalPayout>{totalPayout}</Styled.TotalPayout>
-          </TypographyAtom>
+          </TYpography>
         </Box>
       </CardContent>
     </Styled.StyledCard>
